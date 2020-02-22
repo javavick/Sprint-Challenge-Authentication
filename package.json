@@ -4,7 +4,11 @@
   "description": "Authentication Sprint Challenge",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "test": "cross-env NODE_ENV=test jest --verbose --watch",
+    "server": "cross-env NODE_ENV=development nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -26,7 +30,7 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "bcrypt": "^4.0.0",
+    "bcryptjs": "^2.4.3",
     "connect-session-knex": "^1.5.0",
     "cross-env": "^7.0.0",
     "express-session": "^1.17.0",
